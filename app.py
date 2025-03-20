@@ -5,7 +5,7 @@ from deepface import DeepFace
 
 app = Flask(__name__)
 
-@app.route('/verify', methods=['POST'])
+@app.route('/verify', methods=['POST','GET'])
 def verify_faces():
     if 'image1' not in request.files or 'image2' not in request.files:
         return jsonify({"error": "Both image1 and image2 are required"}), 400
